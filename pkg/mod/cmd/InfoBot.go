@@ -8,9 +8,9 @@ import (
 	setting "github.com/yookudohot/naji/config/setting"
 )
 
-func init(){
+ func init(){
 	handler.RegisterCommand(handler.Command{
-		Name: "showinfo",
+		Name: "info",
 		Description: "Mostra algumas informações",
 		Execute: executeInfo,
 	})
