@@ -11,7 +11,7 @@ import (
 	config "github.com/yookudohot/naji/config/setting" // config
 	"github.com/yookudohot/naji/handler" //handler
 	_ "github.com/yookudohot/naji/pkg/mod/cmd" // pacote de comandos
-	_ "github.com/yookudohot/naji/pkg/mod/admin"
+	_ "github.com/yookudohot/naji/pkg/mod/admin" //pacotes de comandos de admin
 )
 
 func main() {
@@ -40,6 +40,8 @@ func main() {
 		}
 	})
 	
+	log.Printf("Total de comandso registrados: %d", len(handler.Commands))
+
 	sess.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		if cmd, ok := handler.Commands[i.ApplicationCommandData().Name]; ok {
 			cmd.Execute(s, i)

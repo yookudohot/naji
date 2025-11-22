@@ -22,3 +22,10 @@ func Prefix_return() string {
 	botPrefix := os.Getenv("PREFIX")
 	return botPrefix
 }
+func InviteLink_return() string {err := get_env.Load("config/setting/.env");if err != nil {
+		log.Println("Nao foi possivel carregar o .env")
+};botInviteLink := os.Getenv("INVITE_LINK"); return botInviteLink}
+
+func GithubReturn() string {err := get_env.Load("config/setting/.env");if err != nil {
+		log.Println("Nao foi possivel carregar o .env")
+};github := os.Getenv("GITHUB_REPO"); return github}
